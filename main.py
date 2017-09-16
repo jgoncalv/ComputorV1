@@ -82,12 +82,22 @@ def compareSplit(tab1, tab2):
         return -1
     return 1
 
+def sq_rt(nb):
+    return (nb**(0.5))
+
 def resolveEq(dic, degre):
     if degre == 1:
         res = dic['a'] * -1 / dic['b']
         print("La solution est :\n" + str(res))
     elif degre == 2:
-        
+        delta = dic['b'] * dic['b'] - 4 * dic['a'] * dic['c']
+        if delta == 0:
+            print("Le discriminant est égal à 0, la solution est:")
+            nb = -1 * dic['b'] / (2 * dic['c'])
+            print(str(nb))
+        elif delta > 0:
+            print("Le discriminant est supérieur à 0, les deux solutions réelles sont:")
+            nb1 = -1 * sq_rt(delta) / 
 
 def Main(argv):
     #parsing(argv)
