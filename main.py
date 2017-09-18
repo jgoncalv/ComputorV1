@@ -97,7 +97,17 @@ def resolveEq(dic, degre):
             print(str(nb))
         elif delta > 0:
             print("Le discriminant est supérieur à 0, les deux solutions réelles sont:")
-            nb1 = -1 * sq_rt(delta) / 
+            nb1 = (-1 * dic['b'] - sq_rt(delta)) / (2 * dic['c'])
+            nb2 = (-1 * dic['b'] + sq_rt(delta)) / (2 * dic['c'])
+            print("x1 = " + str(nb1))
+            print("x2 = " + str(nb2))
+        elif delta < 0:
+            print("L'équation n'admet pas de solution réelle, mais deux solutions complexes conjuguées:")
+            b = -1 * dic['b']
+            delta = -1 * delta
+            c = dic['c']
+            print("x1 = (" + str(b) + " − i√(" + str(delta) + ")) / (2 * " + str(c)+ ")")
+            print("x2 = (" + str(b) + " + i√(" + str(delta) + ")) / (2 * " + str(c)+ ")")
 
 def Main(argv):
     #parsing(argv)
